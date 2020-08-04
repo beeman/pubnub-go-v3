@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/pubnub/go/messaging"
+	"github.com/beeman/pubnub-go-v3/messaging"
 )
 
 func main() {

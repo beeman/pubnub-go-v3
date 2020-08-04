@@ -295,5 +295,5 @@ supported-platforms:
       - go1.7.1+ 
 name: go
 schema: 1
-scm: github.com/pubnub/go
+scm: github.com/beeman/pubnub-go-v3
 version: “3.16.1”

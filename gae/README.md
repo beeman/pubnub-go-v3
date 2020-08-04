@@ -3,74 +3,77 @@
 #PubNub 3.9.5 client for Google App Engine SDK (1.9.28 - 2015-10-29) using Go
 
 ### Features
-* 3.9.5
- * Fix use of escaping JSON during publish
- * Prefix uuid with 'pn-'
-* 3.9.4.3
- * Changed origin to ps.pndsn.com
-* 3.9.4.1
- * fixed misspells, some golint changes and gocyclo issues
-* 3.9.4
- * Fire Method
- * Replicate arg in Publish
-* 3.9.3
- * Fixed storeInHistory when publishing
-* 3.7.0 changes
- * Add authKey argument to all PAM methods
- * Add Channel Group Methods
- * Add PublishExtended() method that extends existing Publish() with 2 bool options: storeInHistory and doNotSerialize
- * Fix multiple channels encoding in PAM methods
-* 3.6.3 changes
- * GAE and Managed VM use the same code now.
- * PAM operations (grant, revoke, audit) now return 403 errors in the Error Callback
-* 3.6.1 changes
- * Modified to work with the the app engine run on Managed VMs (https://github.com/golang/appengine)
-* 3.6 features 
- * HereNow with state (here now's signature has changed, the response has also changed)
- * WhereNow
- * Global Here Now
- * User State (Set, Get, Delete)
- * Presence heartbeat 
- * Presence heartbeat interval
-* PAM: To use the PAM features in the example please enable PAM from the Pubnub admin console (https://admin.pubnub.com) and replace the publish, subscribe and secret keys in the example.
-* Multiple messages received in a single response from the server will now be split into individual messages
-* Non 200 response will now be bubbled to the client
-* Error Callback: All the error messages are routed to this callback channel
-* Subscribe/Presence is under development for GO App engine. In the example we have demonstarted Subscribe and Presence using the PubNub JavaScript SDK
+
+- 3.9.5
+- Fix use of escaping JSON during publish
+- Prefix uuid with 'pn-'
+- 3.9.4.3
+- Changed origin to ps.pndsn.com
+- 3.9.4.1
+- fixed misspells, some golint changes and gocyclo issues
+- 3.9.4
+- Fire Method
+- Replicate arg in Publish
+- 3.9.3
+- Fixed storeInHistory when publishing
+- 3.7.0 changes
+- Add authKey argument to all PAM methods
+- Add Channel Group Methods
+- Add PublishExtended() method that extends existing Publish() with 2 bool options: storeInHistory and doNotSerialize
+- Fix multiple channels encoding in PAM methods
+- 3.6.3 changes
+- GAE and Managed VM use the same code now.
+- PAM operations (grant, revoke, audit) now return 403 errors in the Error Callback
+- 3.6.1 changes
+- Modified to work with the the app engine run on Managed VMs (https://github.com/golang/appengine)
+- 3.6 features
+- HereNow with state (here now's signature has changed, the response has also changed)
+- WhereNow
+- Global Here Now
+- User State (Set, Get, Delete)
+- Presence heartbeat
+- Presence heartbeat interval
+- PAM: To use the PAM features in the example please enable PAM from the Pubnub admin console (https://admin.pubnub.com) and replace the publish, subscribe and secret keys in the example.
+- Multiple messages received in a single response from the server will now be split into individual messages
+- Non 200 response will now be bubbled to the client
+- Error Callback: All the error messages are routed to this callback channel
+- Subscribe/Presence is under development for GO App engine. In the example we have demonstarted Subscribe and Presence using the PubNub JavaScript SDK
 
 ###Get Code
 
-* Clone the PubNub Go repo using `git clone https://github.com/pubnub/go.git`
+- Clone the PubNub Go repo using `git clone https://github.com/beeman/pubnub-go-v3.git`
 
 ###Example
-* For GAE example please see [gae-example](../gae-example)
-* For Managed VM example please see [gae-managed-vm-example](../gae-managed-vm-example)
+
+- For GAE example please see [gae-example](../gae-example)
+- For Managed VM example please see [gae-managed-vm-example](../gae-managed-vm-example)
 
 ###Running Unit tests (instructions for Mac/Linux, for other dev environments the instructions are similar)
 
-* Open Terminal.
-* Make sure that `<go-workspace>/github.com/pubnub/go/gae/messaging` is in the GOPATH.
-* Change the directory to 
-`<Path-to-PubNub-GAE-Folder>github.com/pubnub/go/gae/tests`
-* Run the command `goapp test`. 
+- Open Terminal.
+- Make sure that `<go-workspace>/github.com/beeman/pubnub-go-v3/gae/messaging` is in the GOPATH.
+- Change the directory to
+  `<Path-to-PubNub-GAE-Folder>github.com/beeman/pubnub-go-v3/gae/tests`
+- Run the command `goapp test`.
 
 ###Use pubnub in your project
-* Built using Eclipse IDE (Luna).
-* Install golang plugin for Eclipse.
-* Insatll Google App Engine SDK for Go.
-* Clone https://github.com/pubnub/go.git
-* Create a new folder for your project.
-* Import `github.com/pubnub/go/gae/messaging` in your project.
+
+- Built using Eclipse IDE (Luna).
+- Install golang plugin for Eclipse.
+- Insatll Google App Engine SDK for Go.
+- Clone https://github.com/beeman/pubnub-go-v3.git
+- Create a new folder for your project.
+- Import `github.com/beeman/pubnub-go-v3/gae/messaging` in your project.
 
 ```go
 import (
     // Other imports...
-    "github.com/pubnub/go/gae/messaging"
+    "github.com/beeman/pubnub-go-v3/gae/messaging"
 )
 ```
 
-* For the detailed usage of the PunNub API, please refer to the rest of the ReadMe 
-* The SDK has a dependency on Gorilla web toolkit, for sessions (http://www.gorillatoolkit.org). You need to download Gorilla web toolkit from the git repo using `go get github.com/gorilla/sessions` and copy it to `github.com/gorilla/sessions` in your project maintaining the folder structure
+- For the detailed usage of the PunNub API, please refer to the rest of the ReadMe
+- The SDK has a dependency on Gorilla web toolkit, for sessions (http://www.gorillatoolkit.org). You need to download Gorilla web toolkit from the git repo using `go get github.com/gorilla/sessions` and copy it to `github.com/gorilla/sessions` in your project maintaining the folder structure
 
 ###Quick Implementation Examples
 
@@ -186,6 +189,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### GrantSubscribe
+
 ```go
         //Init pubnub instance
 
@@ -197,6 +201,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### RevokeSubscribe
+
 ```go
         //Init pubnub instance
 
@@ -208,6 +213,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### AuditSubscribe
+
 ```go
         //Init pubnub instance
 
@@ -219,6 +225,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### GrantPresence
+
 ```go
         //Init pubnub instance
 
@@ -230,6 +237,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### RevokePresence
+
 ```go
         //Init pubnub instance
 
@@ -242,6 +250,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### AuditPresence
+
 ```go
         //Init pubnub instance
 
@@ -253,6 +262,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### GrantChannelGroup
+
 ```go
         //Init pubnub instance
 
@@ -264,6 +274,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### RevokeChannelGroup
+
 ```go
         //Init pubnub instance
 
@@ -276,6 +287,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### AuditChannelGroup
+
 ```go
         //Init pubnub instance
 
@@ -287,6 +299,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### SetAuthKey
+
 ```go
         //Init pubnub instance
 
@@ -294,6 +307,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### GetAuthKey
+
 ```go
         //Init pubnub instance
 
@@ -301,6 +315,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Set User State using Key-Pair
+
 ```go
         //Init pubnub instance
 
@@ -312,6 +327,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Delete User State
+
 ```go
         //Init pubnub instance
 
@@ -323,6 +339,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Set User State using JSON
+
 ```go
         //Init pubnub instance
 
@@ -335,6 +352,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Get User State
+
 ```go
         //Init pubnub instance
 
@@ -347,6 +365,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Where Now
+
 ```go
         //Init pubnub instance
 
@@ -358,6 +377,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Global Here Now
+
 ```go
         //Init pubnub instance
 
@@ -368,6 +388,5 @@ Initialize a new Pubnub instance.
 
         // please goto the top of this file see the implementation of handleResult
 ```
-
 
 ## Contact support@pubnub.com for all questions

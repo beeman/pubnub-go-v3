@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
-	"github.com/pubnub/go/messaging"
+	"github.com/beeman/pubnub-go-v3/messaging"
 	"golang.org/x/net/websocket"
 	"html/template"
 	"log"

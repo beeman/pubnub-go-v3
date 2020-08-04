@@ -7,7 +7,7 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
-	"github.com/pubnub/go/messaging"
+	"github.com/beeman/pubnub-go-v3/messaging"
 	"log"
 	"math/big"
 	"os"

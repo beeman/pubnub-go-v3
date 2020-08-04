@@ -3,86 +3,89 @@
 # PubNub 3.16.1 client for Go 1.7.1+
 
 ### Important changes from version 3.10.0 onwards:
+
 Breaking API Change: newPubnub has a new parameter where it expects a logger instance [Example](#init). This fixes a rare race condition
 
 ### Change log
-* 3.16.1
-  * Code cleanup
-* 3.16.0
-  * Subscribe v2 Abort Fix
-* 3.15.0
-  * Add support for setting the non subscribe HTTP client
-* 3.14.0
-  * Fixed a corner case panic
-* 3.13.0
-  * Presence Delta Intervals
-* 3.12.0
-  * Super admin
-* 3.11.0
-  * NonSub goroutine concurrency and worker queues.
-* 3.10.0
-  * Breaking API Change: newPubnub has a new parameter where it expects a logger instance [Example](#init). This fixes a rare race condition.
-  * Fix use of escaping JSON during publish
-  * Prefix uuid with 'pn-'
-* 3.9.4.3
-  * Message TTL
-  * Subscriber UUID
-  * Subscribe V2
-* 3.9.4.2
-  * Changed origin to ps.pndsn.com
-* 3.9.4.1
-  * fixed misspells, some golint changes and gocyclo issues
-* 3.9.4
-  * Fire Method
-  * Replicate arg in Publish
-* 3.9.3
-  * PubSub v2
-  * Message Filtering
-  * Logger Optimizations, logging format changed. Removed mutex around logging statements.
-  * added alternative implementation of encodeNonASCIIChars
-  * Fixed storeInHistory when publishing
-* 3.7.0
-  * Subscribe method arguments changed
-  * Add authKey argument to all PAM methods
-  * Add Channel Group Methods
-  * Add PublishExtended() method that extends existing Publish() with 2 bool options: storeInHistory and doNotSerialize
-  * Fix multiple channels encoding in PAM methods
-* 3.6.4
-  * Exposed MaxIdleConnsPerHost of the transport
-* 3.6.3
-  * PAM operations (grant, revoke, audit) now return 403 errors in the Error Callback
-* SetLogging method name changed to LoggingEnabled
-* SetLogOutput added, you can customize the log output now 
-* Support to change uuid
-* 3.6 features 
-  * HereNow with state (here now's signature has changed, the response has also changed)
-  * WhereNow
-  * Global Here Now
-  * User State (Set, Get, Delete)
-  * Presence heartbeat 
-  * Presence heartbeat interval
 
-* These are converted to uint16
-  * nonSubscribeTimeout
-  * retryInterval
-  * connectTimeout
-  * subscribeTimeout
+- 3.16.1
+  - Code cleanup
+- 3.16.0
+  - Subscribe v2 Abort Fix
+- 3.15.0
+  - Add support for setting the non subscribe HTTP client
+- 3.14.0
+  - Fixed a corner case panic
+- 3.13.0
+  - Presence Delta Intervals
+- 3.12.0
+  - Super admin
+- 3.11.0
+  - NonSub goroutine concurrency and worker queues.
+- 3.10.0
+  - Breaking API Change: newPubnub has a new parameter where it expects a logger instance [Example](#init). This fixes a rare race condition.
+  - Fix use of escaping JSON during publish
+  - Prefix uuid with 'pn-'
+- 3.9.4.3
+  - Message TTL
+  - Subscriber UUID
+  - Subscribe V2
+- 3.9.4.2
+  - Changed origin to ps.pndsn.com
+- 3.9.4.1
+  - fixed misspells, some golint changes and gocyclo issues
+- 3.9.4
+  - Fire Method
+  - Replicate arg in Publish
+- 3.9.3
+  - PubSub v2
+  - Message Filtering
+  - Logger Optimizations, logging format changed. Removed mutex around logging statements.
+  - added alternative implementation of encodeNonASCIIChars
+  - Fixed storeInHistory when publishing
+- 3.7.0
+  - Subscribe method arguments changed
+  - Add authKey argument to all PAM methods
+  - Add Channel Group Methods
+  - Add PublishExtended() method that extends existing Publish() with 2 bool options: storeInHistory and doNotSerialize
+  - Fix multiple channels encoding in PAM methods
+- 3.6.4
+  - Exposed MaxIdleConnsPerHost of the transport
+- 3.6.3
+  - PAM operations (grant, revoke, audit) now return 403 errors in the Error Callback
+- SetLogging method name changed to LoggingEnabled
+- SetLogOutput added, you can customize the log output now
+- Support to change uuid
+- 3.6 features
 
-* Optimizations
+  - HereNow with state (here now's signature has changed, the response has also changed)
+  - WhereNow
+  - Global Here Now
+  - User State (Set, Get, Delete)
+  - Presence heartbeat
+  - Presence heartbeat interval
 
+- These are converted to uint16
+
+  - nonSubscribeTimeout
+  - retryInterval
+  - connectTimeout
+  - subscribeTimeout
+
+- Optimizations
 
 ### Earlier Features
 
-* Supports multiplexing, UUID, SSL, Encryption, Proxy, and godoc
-* This version is not backward compatible. The major change is in the func calls. A new parameter "error callback" is added to the major functions of the pubnub class.
-* The client now supports:
-* Error Callback: All the error messages are routed to this callback channel
-* Resume on reconnect
-* You can now "Subscribe with timetoken"
-* An example of Disconnect/Retry has been added in the example 
-* Multiple messages received in a single response from the server will now be split into individual messages
-* Non 200 response will now be bubbled to the client
-* PAM: To use the PAM features in the example please enable PAM from the Pubnub admin console (https://admin.pubnub.com) and replace the publish, subscribe and secret keys in example/pubnubExample.go (line 124).
+- Supports multiplexing, UUID, SSL, Encryption, Proxy, and godoc
+- This version is not backward compatible. The major change is in the func calls. A new parameter "error callback" is added to the major functions of the pubnub class.
+- The client now supports:
+- Error Callback: All the error messages are routed to this callback channel
+- Resume on reconnect
+- You can now "Subscribe with timetoken"
+- An example of Disconnect/Retry has been added in the example
+- Multiple messages received in a single response from the server will now be split into individual messages
+- Non 200 response will now be bubbled to the client
+- PAM: To use the PAM features in the example please enable PAM from the Pubnub admin console (https://admin.pubnub.com) and replace the publish, subscribe and secret keys in example/pubnubExample.go (line 124).
 
 ### Quick Start Video
 
@@ -90,90 +93,91 @@ We've put together a quick HOWTO video here http://vimeo.com/93523019
 
 ### Get Package
 
-* Use the command `go get github.com/pubnub/go` to download and install the package
+- Use the command `go get github.com/beeman/pubnub-go-v3` to download and install the package
 
 ### Run the example
-* Browse to the directory ` $GOPATH/src/github.com/pubnub/go/messaging/ ` and switch to `master_3x` branch, `git checkout master_3x`
-* Built using Eclipse IDE (juno) 
-* Install golang plugin for Eclipse
-* Using Eclipse Project Explorer browse to the directory `$GOPATH/src/github.com/pubnub/go/messaging/example`, where `$GOPATH` is the workspaces directory of go.
-* Run `pubnubExample.go` as a "go application"
-* Look for the application in the "Console" of the Eclipse IDE
+
+- Browse to the directory `$GOPATH/src/github.com/beeman/pubnub-go-v3/messaging/` and switch to `master_3x` branch, `git checkout master_3x`
+- Built using Eclipse IDE (juno)
+- Install golang plugin for Eclipse
+- Using Eclipse Project Explorer browse to the directory `$GOPATH/src/github.com/beeman/pubnub-go-v3/messaging/example`, where `$GOPATH` is the workspaces directory of go.
+- Run `pubnubExample.go` as a "go application"
+- Look for the application in the "Console" of the Eclipse IDE
 
 ### Running Unit tests (instructions for Mac/Linux, for other dev environments the instructions are similar)
 
-* Open Terminal.
-* Change the directory to 
-`<project-workspace>/src/github.com/pubnub/go/messaging/tests.`
-* Run the command `go test -i` to install the packages. 
-* And then run the command `go test` to run test cases.
+- Open Terminal.
+- Change the directory to
+  `<project-workspace>/src/github.com/beeman/pubnub-go-v3/messaging/tests.`
+- Run the command `go test -i` to install the packages.
+- And then run the command `go test` to run test cases.
 
 ### Use pubnub in your project
 
-* Install golang plugin for Eclipse.
-* Use the command go get github.com/pubnub/go to download and install the package.
-* Open terminal/command prompt. Browse to the directory ` $GOPATH/src/github.com/pubnub/go/messaging/ `
-* Switch to the branch `master_3x`: `git checkout master_3x`
-* Run the command `go install`.
-* Go to eclipse and create a new "go project". Enter the project name.
-* Create a new "go file" in the "src" directory of the new project. For this example choose the "Command Source File" under the "Source File Type" with "Empty Main Function".
-* Click Finish
-* On this file in eclipse.
-* Under import add the 2 lines
+- Install golang plugin for Eclipse.
+- Use the command go get github.com/beeman/pubnub-go-v3 to download and install the package.
+- Open terminal/command prompt. Browse to the directory `$GOPATH/src/github.com/beeman/pubnub-go-v3/messaging/`
+- Switch to the branch `master_3x`: `git checkout master_3x`
+- Run the command `go install`.
+- Go to eclipse and create a new "go project". Enter the project name.
+- Create a new "go file" in the "src" directory of the new project. For this example choose the "Command Source File" under the "Source File Type" with "Empty Main Function".
+- Click Finish
+- On this file in eclipse.
+- Under import add the 2 lines
 
 ```go
 import (
     // Other imports...
     "fmt"
-    "github.com/pubnub/go/messaging"
+    "github.com/beeman/pubnub-go-v3/messaging"
 )
 ```
 
-* And under main add the following line
+- And under main add the following line
 
 ```go
 fmt.Println("PubNub Api for go;", messaging.VersionInfo())
 ```
 
-* Run the example as a "go application"
-* This application will print the version info of the PubNub Api.
-* For the detailed usage of the PunNub API, please refer to the rest of the ReadMe or the pubnubExample.go file under ` $GOPATH/src/github.com/pubnub/go/messaging/example `
-
+- Run the example as a "go application"
+- This application will print the version info of the PubNub Api.
+- For the detailed usage of the PunNub API, please refer to the rest of the ReadMe or the pubnubExample.go file under `$GOPATH/src/github.com/beeman/pubnub-go-v3/messaging/example`
 
 In addition to Eclipse, this has also been tested with Go 1.0.3 on Linux using IntelliJ IDEA 12.
 
 ### Demo Console App
+
 We've included a demo console app which documents all the functionality of the client, for example:
 
-* Subscribe
-* Subscribe with timetoken
-* Publish
-* PublishExtended
-* Presence
-* Detailed History
-* Here_Now
-* Unsubscribe
-* Presence-Unsubscribe
-* Time
-* Disconnect/Retry
-* GrantSubscribe
-* RevokeSubscribe
-* AuditSubscribe
-* GrantPresence
-* RevokePresence
-* AuditPresence
-* SetAuthKey
-* GetAuthKey
-* Exit
-* Set Presence Heartbeat
-* Set Presence Heartbeat Interval
-* Set User State by adding or modifying the Key-Pair
-* Delete an existing Key-Pair
-* Set User State with JSON string
-* Get User State
-* WhereNow
-* GlobalHereNow
-* Change UUID 
+- Subscribe
+- Subscribe with timetoken
+- Publish
+- PublishExtended
+- Presence
+- Detailed History
+- Here_Now
+- Unsubscribe
+- Presence-Unsubscribe
+- Time
+- Disconnect/Retry
+- GrantSubscribe
+- RevokeSubscribe
+- AuditSubscribe
+- GrantPresence
+- RevokePresence
+- AuditPresence
+- SetAuthKey
+- GetAuthKey
+- Exit
+- Set Presence Heartbeat
+- Set Presence Heartbeat Interval
+- Set User State by adding or modifying the Key-Pair
+- Delete an existing Key-Pair
+- Set User State with JSON string
+- Get User State
+- WhereNow
+- GlobalHereNow
+- Change UUID
 
 ### Quick Implementation Examples
 
@@ -237,7 +241,7 @@ func handleResult(successChannel, errorChannel chan []byte, timeoutVal int64, ac
             return
         case <-timeout:
             fmt.Println(fmt.Sprintf("%s Handler timeout after %d secs", action, timeoutVal))
-			fmt.Println("")            
+			fmt.Println("")
             return
         }
     }
@@ -256,9 +260,9 @@ Initialize a new Pubnub instance.
     * var infoLogger *log.Logger
     * infoLogger = log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
     * pubInstance := messaging.NewPubnub("demo", "demo", "demo", "", true, "customuuid", infoLogger)
-    * 
+    *
     * OR
-    * 
+    *
     * pubInstance := messaging.NewPubnub("demo", "demo", "demo", "", true, "customuuid", nil)
     */
 
@@ -324,6 +328,7 @@ Initialize a new Pubnub instance.
         go handleSubscribeResult(successChannel, errorChannel, "Presence")
         // please goto the top of this file see the implementation of handleSubscribeResult
 ```
+
 #### Channel Group Subscribe
 
 ```go
@@ -359,7 +364,7 @@ Initialize a new Pubnub instance.
         var channelCallback = make(chan []byte)
         go pubInstance.History(<pubnub channel>, <no of items to fetch>, <start time>, <end time>, false, channelCallback, errorChannel)
         //example: go _pub.History(<pubnub channel>, 100, 0, 0, false, channelCallback, errorChannel)
-        go handleResult(channel, errorChannel, messaging.GetNonSubscribeTimeout(), "Detailed History") 
+        go handleResult(channel, errorChannel, messaging.GetNonSubscribeTimeout(), "Detailed History")
         // please goto the top of this file see the implementation of handleResult
 ```
 
@@ -375,7 +380,7 @@ Initialize a new Pubnub instance.
         // please goto the top of this file see the implementation of handleResult
 ```
 
-####  Unsubscribe
+#### Unsubscribe
 
 ```go
         //Init pubnub instance
@@ -412,13 +417,15 @@ Initialize a new Pubnub instance.
 ```
 
 #### Disconnect/Retry
+
 ```go
         //Init pubnub instance
 
-        pubInstance.CloseExistingConnection() 
+        pubInstance.CloseExistingConnection()
 ```
 
 #### GrantSubscribe
+
 ```go
         //Init pubnub instance
 
@@ -430,6 +437,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### RevokeSubscribe
+
 ```go
         //Init pubnub instance
 
@@ -441,6 +449,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### AuditSubscribe
+
 ```go
         //Init pubnub instance
 
@@ -452,6 +461,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### GrantPresence
+
 ```go
         //Init pubnub instance
 
@@ -463,6 +473,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### RevokePresence
+
 ```go
         //Init pubnub instance
 
@@ -474,6 +485,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### AuditPresence
+
 ```go
         //Init pubnub instance
 
@@ -483,7 +495,9 @@ Initialize a new Pubnub instance.
         go handleResult(pamChannel, errorChannel, messaging.GetNonSubscribeTimeout(), "Audit Presence")
         // please goto the top of this file see the implementation of handleResult
 ```
+
 #### GrantChannelGroup
+
 ```go
         //Init pubnub instance
 
@@ -495,6 +509,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### RevokeChannelGroup
+
 ```go
         //Init pubnub instance
 
@@ -506,6 +521,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### AuditChannelGroup
+
 ```go
         //Init pubnub instance
 
@@ -517,6 +533,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### SetAuthKey
+
 ```go
         //Init pubnub instance
 
@@ -524,6 +541,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### GetAuthKey
+
 ```go
         //Init pubnub instance
 
@@ -531,6 +549,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Set Presence Heartbeat
+
 ```go
         //Init pubnub instance
 
@@ -538,6 +557,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Set Presence Heartbeat Interval
+
 ```go
         //Init pubnub instance
 
@@ -545,6 +565,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Set User State using Key-Pair
+
 ```go
         //Init pubnub instance
 
@@ -556,6 +577,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Delete User State
+
 ```go
         //Init pubnub instance
 
@@ -567,6 +589,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Set User State using JSON
+
 ```go
         //Init pubnub instance
 
@@ -578,6 +601,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Get User State
+
 ```go
         //Init pubnub instance
 
@@ -589,6 +613,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Where Now
+
 ```go
         //Init pubnub instance
 
@@ -601,6 +626,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Global Here Now
+
 ```go
         //Init pubnub instance
 
@@ -613,6 +639,7 @@ Initialize a new Pubnub instance.
 ```
 
 #### Change UUID
+
 ```go
         //Init pubnub instance
 
@@ -624,8 +651,7 @@ Initialize a new Pubnub instance.
 ```go
         //Init pubnub instance
 
-        pubInstance.Abort()  
+        pubInstance.Abort()
 ```
-
 
 ## Contact support@pubnub.com for all questions

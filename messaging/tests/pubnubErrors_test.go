@@ -3,7 +3,7 @@ package tests
 import (
 	"testing"
 	//"sync"
-	"github.com/pubnub/go/messaging"
+	"github.com/beeman/pubnub-go-v3/messaging"
 	"github.com/stretchr/testify/assert"
 )
 

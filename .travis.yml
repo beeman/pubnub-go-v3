@@ -14,7 +14,7 @@ matrix:
   fast_finish: true    
 install:
   - mkdir -p $GOPATH/src/github.com/pubnub
-  - ln -s $GOPATH/src/github.com/pubnub/go
+  - ln -s $GOPATH/src/github.com/beeman/pubnub-go-v3
   - go get -t -v ./messaging/...
   - go get github.com/wadey/gocovmerge
 

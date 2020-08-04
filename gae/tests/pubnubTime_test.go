@@ -4,7 +4,7 @@ package tests
 
 import (
 	"fmt"
-	"github.com/pubnub/go/gae/messaging"
+	"github.com/beeman/pubnub-go-v3/gae/messaging"
 	"google.golang.org/appengine/aetest"
 	"testing"
 )
